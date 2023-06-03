@@ -61,5 +61,66 @@ container 를 실행 한 후 http://localhost:8888 로 접속
 
 TODO 2.3.4 Run your image 까지 학습 다음 학습 하기 !!!
 
+5. Terminal 에서 Docker Cloud 에 Image 를 올리기 위하여 로그인
+
+```
+docker login
+```
+
+해당 명령어를 통하여 기존 Docker 계정으로 로그인
+
+6. Docker 로그인을 한 후 터미널에서 Docker Image 를 Push
+
+```
+docker push {이미지 이름}
+```
+
+Docker 저장소에 자신의 Image 를 올림
+
+
+### Docker Image 들을 Docker Hub 에 Push 하는 방법
+
+1. Docker Login
+
+```
+docker login
+```
+Docker Login 명령어를 입력 시 Username 을 입력하라고 한다. 그럼 Docker Hub 계정 id 를 입력 하면 곧 이어 Password 입력도 요구 한다.
+
+2. Docker Image 생성
+
+```
+docker build -t {Docker 계정 UserName} / {Docker App 이름}
+```
+!! 여기서 주의하여야 할 점은 Docker Image 를 생성 시 Docker Username 과 동일하게 생성하여야 한다는 것이다. 아니면 denied 가 발생한다
+
+3. 생성된 Docker Image Push
+
+```
+docker push {Docker 계정 UserName} / {Docker App 이름}
+```
+생성이 된 Image 를 Docker Hub 에 Push 를 해주면 Docker Hub 웹사이트에서 Push 된 Image 확인이 가능하다.
+
+
+### Docker Command Summary
+
+- FROM : starts the Dockerfile. Dockerfile 은 반드시 FROM 명령어로 시작함, FROM Command 는 Argument 로 Imgae 이름을 필요로 함
+
+- RUN : RUN 명령어는 만들어진 Image 를 build 할 시에 사용, Docker 는 만들어진 이미지를 실행할 시에 Run 명령어를 사용할 것이다. 
+
+- COPY : Local File 들을 Container 로 복사함
+
+- CMD : CMD 명령어는 Image 가 실행 되었을 때 실행하는 명령어로 정의한다. 이것은 Image ㅡㄹㄹ 새로 생성을 하는 것이 아닌 간단하게 Command 를 실행을 한다. 오직 하나의 Docker / Image 마다 한개씩 사용이 가능하다. 
+
+- EXPOSE : 사용자를 위하여 hint 를 생성을 한다. 이것은 inspect 명령어에 표출 될 정보를 포함한다.
+
+- PUSH : 자신의 Image 를 Docker Cloud 에 Push 를 한다.
+
+
+
+
+
+
+
 
 
