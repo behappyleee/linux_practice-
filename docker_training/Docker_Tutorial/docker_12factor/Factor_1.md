@@ -64,3 +64,6 @@ curl -XPUT http://localhost:1337/message/{MessageId}/text={변경 원하는 값}
 
 
 
+
+
+
