@@ -14,5 +14,5 @@ COPY . .
 EXPOSE 3000
 
 # npm script 실행
-CMD ["npm", start]
+CMD ["npm", "start"]
 
